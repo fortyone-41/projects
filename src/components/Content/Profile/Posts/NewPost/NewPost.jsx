@@ -1,43 +1,31 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import style from './NewPost.module.css'
 
-function returnPost(text) {
-  const objectPost=text;
-  return objectPost;
-}
 
-function useInputValue(defaultValue = '') {
-  const [value, setValue] = useState(defaultValue)
-
-  return {
-      bind: {
-          value,
-          onChange: event => setValue(event.target.value)
-      },
-      clear: () => setValue(''),
-      value: () => value
-  }
-}
 
 const NewPost = (props) => {
+  let newElementText = React.createRef()
 
-  const textarea = useInputValue('')
+  let addPost = () => {
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    today = mm + '.' + dd + '.' + yyyy;
+    let text = newElementText.current.value
+    props.setPost(props.posts.concat([{
+      id: props.posts.length + 1,
+      text,
+      date: today,
+      like: '0'
+    }]))
+  }
 
-    function submitHandler(event) {
-        event.preventDefault()
-
-        if (textarea.value().trim()) {
-            props.AddPost(textarea.value())
-            textarea.clear()
-        }
-    }
   return <div>
-    <form onSubmit={submitHandler}>
-      <div>
-        <textarea {...textarea.bind}></textarea>
-        </div>
-      <button type='submit'>Add Post</button>
-    </form>
+    <div>
+      <textarea ref={newElementText} />
+    </div>
+    <button onClick={addPost}>Add Post</button>
   </div>
 
 }

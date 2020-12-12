@@ -2,7 +2,8 @@ import React from 'react'
 import Posts from './Posts/Posts'
 import style from './Profile.module.css'
 
-const Profile = () => {
+const Profile = (props) => {
+  
   return (
     <div>
       <div className={style.headerImg}>
@@ -13,7 +14,7 @@ const Profile = () => {
           <img src='https://www.w3schools.com/howto/img_avatar2.png' height='100px' /> descr
         </div>
       </div>
-      <Posts Avatar='https://www.w3schools.com/howto/img_avatar2.png' />
+      <Posts Avatar='https://www.w3schools.com/howto/img_avatar2.png' posts = {props.posts} setPost={props.setPosts}  />
     </div>
   )
 }

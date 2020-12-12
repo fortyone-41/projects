@@ -1,5 +1,4 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 import style from './History.module.css'
 
 const History = (props) => {
