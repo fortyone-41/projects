@@ -1,0 +1,19 @@
+
+.nav {
+    padding: 20px;
+    grid-area: n;
+    background-color: burlywood;
+  }
+  
+  .nav div {
+    gap: 10px;
+  }
+
+  .item a{
+      color: white;
+      text-decoration: none;
+  }
+
+  .item a.active{
+        color: grey;
+  }

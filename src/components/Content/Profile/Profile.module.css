@@ -1,0 +1,14 @@
+
+  
+.profile.avatar { 
+  width: 20%;
+}
+
+.profile.avatar img {
+  width:100px;
+
+}
+
+.profile.headerImg img {
+  height: 100px;
+}
