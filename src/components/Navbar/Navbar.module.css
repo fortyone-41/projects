@@ -3,6 +3,7 @@
     padding: 20px;
     grid-area: n;
     background-color: burlywood;
+    border-radius: 10px;
   }
   
   .nav div {

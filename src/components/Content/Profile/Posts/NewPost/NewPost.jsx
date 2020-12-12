@@ -33,7 +33,9 @@ const NewPost = (props) => {
     }
   return <div>
     <form onSubmit={submitHandler}>
-      <textarea {...textarea.bind}></textarea>
+      <div>
+        <textarea {...textarea.bind}></textarea>
+        </div>
       <button type='submit'>Add Post</button>
     </form>
   </div>
